@@ -1,0 +1,30 @@
+@import url('./variables.css');
+@import url('./header.css');
+@import url('./content.css');
+@import url('./footer.css');
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 90px 1fr 70px;
+    grid-template-areas: 
+        "header"
+        "main-content"
+        "footer"
+    ;
+    color: var(--color-white);
+    background-color: var(--color-gray);
+}
+
+@media (max-width: 950px) {
+    body{
+        grid-template-rows: 200px 1fr 70px;
+    }
+}

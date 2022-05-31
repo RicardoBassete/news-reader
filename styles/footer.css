@@ -1,0 +1,32 @@
+footer{
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#pagination {
+    padding-top: 10px;
+}
+  
+#pagination a.pag-item{
+    color: var(--color-green);
+    border-radius: 5px;
+    float: left;
+    padding: 8px 10px;
+    margin: 0px 4px;
+    text-decoration: none;
+    border: solid 1px var(--color-green);
+    transition: .3s; 
+}
+
+#pagination a.active{
+    color: var(--color-gray);
+    background-color: var(--color-green);
+}
+
+#pagination a:hover:not(.active) {
+    background-color: rgba(0, 255, 255, .5);
+    color: var(--color-gray);
+}

@@ -1,0 +1,121 @@
+header{
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 60px 30px;
+    grid-template-areas: 
+        "title search"
+        "category orderBy"
+    ;
+}
+header .title{
+    grid-area: title;
+    align-self: center;
+    padding: 25px;
+    padding-left: 50px;
+}
+.title > span{
+    color: var(--color-purple);
+}
+.category-list{
+    grid-area: category;
+    margin-left: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+.category-list li{
+    padding: 5px;
+    transition: .5s;
+}
+.category-list li:not([separator]){
+    color: var(--color-green);
+}
+.category-list li:hover:not([separator]){
+    color: var(--color-gray);
+    background-color: var(--color-green);
+    border-radius: 5px;
+}
+header #input-search{
+    align-self: center;
+    grid-area: search;
+    padding: 10px;
+    border-radius: 25px;
+    background: transparent;
+    color: var(--color-white);
+    border: solid 1px var(--color-green);
+    margin-right: 25px;
+    width: 60%;
+    justify-self: end;
+    transition: .5s;
+}
+header #input-search:hover{
+    border: solid 1px var(--color-purple);
+}
+header #order-selection-group{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    grid-area: orderBy;
+    margin-right: 25px;
+}
+header #order-selection-group span{
+    color: var(--color-green);
+    padding: 5px;
+    margin: 5px;
+    transition: .5s;
+}
+header #order-selection-group span:hover{
+    color: var(--color-gray);
+    background-color: var(--color-green);
+    border-radius: 5px;
+}
+
+@media (max-width: 950px) {
+    header{
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px 50px 1fr 30px;
+        grid-template-areas: 
+            "title" 
+            "search"
+            "category" 
+            "orderBy"
+        ;
+    }
+    header .title{
+        align-self: center;
+        justify-self: center;
+    }
+    .category-list{
+        margin: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .category-list li{
+        margin: 0px 5px;
+        
+    }
+    header #input-search{
+        align-self: center;
+        justify-self: center;
+        width:  90%;
+        margin-right: 0px;
+    }
+    header #order-selection-group{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-right: 0px;
+    }
+    header #order-selection-group span{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
